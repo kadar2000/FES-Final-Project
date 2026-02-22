@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui;
+    color: #243e63;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.row {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.row__narrow {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 96px 0;
+}
+
+.purple {
+    color: #6415ff;
+}
+
+section {
+    padding: 0 32px;
+}
+
+main {
+    margin-bottom: 96px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 
+
+NAVBAR 
+
+*/
+
+.logo {
+    width: 40px;
+    margin: 0px 12px 0px 0px;
+}
+
+.logo__title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #243e63;
+}
+
+.logo__title:hover {
+    color: #6415ff;
+}
+
+nav {
+    display: flex;
+    padding-top: 32px;
+}
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding-bottom: 4px;
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;   /* remove bullets */
+    padding: 0;         /* remove left padding */
+    margin: 0; 
+}
+
+.nav__link:not(.nav__link--primary) {
+    position: relative;
+    color: #243e63;
+    font: 14px Inter, system-ui;
+    font-weight: bold;
+    margin: 0px 24px;
+    padding: 0px 0px 4px 0px;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+
+.nav__link:not(.nav__link--primary)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 1.5px;
+    background-color: #6415ff;
+    transition: width 300ms ease;
+}
+
+.nav__link:not(.nav__link--primary):hover {
+    color: #6415ff;
+}
+
+.nav__link:not(.nav__link--primary):hover::after {
+    width: 100%;
+}
+
+.nav__link--secondary {
+    font: 14px Inter, system-ui;
+    margin: 0px 24px 0px 48px;
+    padding: 0px 0px 4px 0px;
+    font-weight: bold;
+}
+
+.nav__link--primary {
+    color: #f7fafc;
+    border-radius: 50px;
+    font: 14px Inter, system-ui;
+    font-weight: bold;
+    padding: 12px 32px;
+    background-color: #6415ff;
+    margin: 0px;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+.nav__link--primary:hover {
+    background-color: #5011cc;
+    color: #f7fafc;
+}
+
+.btn__menu { 
+    background: none;
+    border: none;
+    font-size: 24px;
+    display: none;  /* hide the menu button on larger screens */
+    cursor: pointer;
+}
+
+.menu__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 378px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(300%);
+    transition: all 300ms ease;
+}
+
+.menu__links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__link:not(.menu__link--primary) {
+    position: relative;
+    color: #1a202c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    transition: color 300ms ease;
+}
+
+.menu__link:not(.menu__link--primary)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #6415ff;
+    transition: width 300ms ease;
+}
+
+.menu__link:not(.menu__link--primary):hover {
+    color: #6415ff;
+}
+
+.menu__link:not(.menu__link--primary):hover::after {
+    width: 100%;
+}
+
+
+/* .menu__link {
+    color: #1a202c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+} */  This is not needed since we are using the ::after pseudo-element to create the underline effect.
+
+.menu__link--primary {
+    color: #f7fafc;
+    background-color: #6415ff;
+    border-radius: 500px;
+    padding: 12px 32px;
+    border: none;
+    margin: 8px 0;
+}
+
+.menu__link--primary:hover {
+    background-color: #5011cc;
+    color: #f7fafc;
+}
+
+.menu--open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.btn__menu--close {
+    position: fixed;
+    top: 24px;
+    right: 40px;
+}
+
+i {
+    color: #6415ff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* 
+
+MOBILE RESPONSIVENESS ↓
+
+*/
+
+@media (max-width: 1024px) {
+
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+}
