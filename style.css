@@ -311,15 +311,18 @@ HEADER / ABOUT US ↓
 
 .header__email button {
     position: absolute;
+    /* top: 50%; */
     right: 8px;
-    top: 8px;
-    bottom: 8px;
+    transform: translateY(-50%);
+    height: 48px;
     padding: 0 32px;
     border-radius: 50px;
     background-color: #6415ff;
     color: white;
     border: none;
     font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .header__customers-title {
@@ -936,6 +939,104 @@ START / CALL TO ACTION ↓
 
 /* 
 
+FOOTER ↓
+
+*/
+
+footer {
+    background: #6415ff;
+    padding: 96px 32px;
+}
+
+.footer__columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__title {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.footer__link {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+    transition: opacity 300ms;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.footer__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 64px 0;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo--img {
+    width: 32px;
+    margin-right: 12px;
+}
+
+.footer__logo--text {
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.footer__copyright {
+    color: white;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 16px;
+}
+
+.footer__social {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__social i {
+    color: #6415ff;
+    font-size: 14px;
+}
+
+
+
+/* 
+
 MOBILE RESPONSIVENESS ↓
 
 */
@@ -1152,6 +1253,21 @@ MOBILE RESPONSIVENESS ↓
   .btn__cta {
       width: 100%;
   }
+
+}
+
+@media (max-width: 768px) {
+
+.footer__columns {
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
+}
+
+.footer__bottom {
+    flex-direction: column;
+    gap: 24px;
+}
 
 }
 
